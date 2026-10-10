@@ -1,0 +1,168 @@
+/* Homework 2: shared stylesheet */
+
+/* Skip link: visible when reached by keyboard */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  background-color: #111827;
+  border: 2px solid #ffffff;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #202a35;
+  background-color: #f4f7fa;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+header {
+  padding: 1.5rem 1rem;
+  color: #ffffff;
+  background-color: #173f5f;
+}
+
+nav {
+  display: inline-block;
+  width: 80%;
+  padding: 0.75rem 1rem;
+  background-color: #206a8a;
+  vertical-align: middle;
+}
+
+nav a {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #12445b;
+  text-decoration: underline;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Descendant selector: only images inside navigation */
+nav img {
+  width: 10%;
+  height: auto;
+  vertical-align: middle;
+}
+
+main {
+  max-width: 1100px;
+  min-height: 55vh;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  font-size: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  color: #ffffff;
+  background-color: #173f5f;
+  text-align: center;
+}
+
+/* Homework 2 asks you to comment out the previous li styling.
+   The former inline-block/width/card styling is intentionally disabled.
+*/
+/*
+li {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  margin: 0.5rem 1%;
+  padding: 0.75rem;
+  background-color: #e8f2f7;
+  border-left: 4px solid #206a8a;
+}
+*/
+
+h1 {
+  margin-top: 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+p {
+  line-height: 1.8;
+}
+
+a {
+  color: #075985;
+}
+
+a:focus {
+  outline: 3px solid #b45309;
+  outline-offset: 3px;
+}
+
+/* Two-column grid: each column is approximately 40% wide */
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: space-evenly;
+  align-items: start;
+  row-gap: 1.5rem;
+}
+
+/* Only images inside .grid are set to full width.
+   Images inside .flex are not affected by this rule.
+*/
+.grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Flexible layout for groups of items */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.flex img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+
+  nav {
+    display: block;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    width: fit-content;
+  }
+}
